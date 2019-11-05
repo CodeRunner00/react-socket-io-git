@@ -3,9 +3,9 @@ const http = require("http");
 const socketIo = require("socket.io");
 const axios = require("axios");
 const port = process.env.PORT || 3001;
-const index = require("./routes/index");
+// const index = require("./routes/index");
 const app = express();
-app.use(index);
+app.use(express.static('../..socket-io-client/build'));
 const server = http.createServer(app);
 const io = socketIo(server); // < Interesting!
 
